@@ -33,6 +33,7 @@ datasets/
 
 - Test the segmentation performance
 
-  
-`$ python test.py`
+```
+$ python test.py
+```
 
