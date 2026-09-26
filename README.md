@@ -18,6 +18,17 @@ This is the official Pytorch implementation of our ICASSP, 2027 submitted paper 
 ## Testing
 Download the test dataset from [GoogleDrive](https://drive.google.com/file/d/1YNtNhTi8rZ2LfgCyANDeIOfuSpJJ4ILm/view?usp=sharing) and place them in the project directory.
 
+The folder structure within `datasets` should be organized as follows.
+```
+datasets/
+├── B1/
+│   ├── test/
+│   │   ├── image/
+│   │   └── mask/
+├── B2/
+├── B3/
+├── B4/
 
+```
 
 
