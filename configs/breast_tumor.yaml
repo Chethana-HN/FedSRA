@@ -1,0 +1,106 @@
+seed: 42
+workers: 4
+output_dir: outputs/
+
+data:
+  image_size: 256
+  num_classes: 1
+  mask_values: null
+  augment: true
+
+sparse:
+  mode: scribble
+  points_per_class: 8
+  scribble_width: 0
+  bg_inner_margin: 3
+  bg_outer_margin: 18
+  bg_num_branches: 2
+  seed: 42
+
+model:
+  width: 32
+  base_channels: 32
+  feature_channels: 32
+  skip_fraction: 0.5
+
+federated:
+  tau: 1.0
+  ema_beta: 0.0
+
+stage1:
+  rounds: 35
+  local_epochs: 1
+  batch_size: 1
+  lr: 0.0001
+  weight_decay: 0.00001
+  lambda_sparse: 0.1
+  grad_clip: 5.0
+  save_every: 5
+
+stage2:
+  rounds: 15
+  local_epochs: 1
+  batch_size: 1
+  lr: 0.0001
+  weight_decay: 0.00001
+  base_channels: 24
+  time_dim: 64
+  diffusion_steps: 20
+  min_alpha_bar: 0.0001
+  lambda_residual: 1.0
+  lambda_bce: 0.5
+  lambda_dice: 1.0
+  error_gamma: 8.0
+  zero_start_prob: 0.5
+  max_train_t_fraction: 0.5
+  grad_clip: 5.0
+  save_every: 5
+
+clients:
+  - name: B1
+    mask_suffix: "_mask"
+    train:
+      images: datasets/B1/train/image
+      masks: datasets/B1/train/mask
+    val:
+      images: datasets/B1/val/image
+      masks: datasets/B1/val/mask
+    test:
+      images: datasets/B1/test/image
+      masks: datasets/B1/test/mask
+
+  - name: B2
+    mask_suffix: "_mask"
+    train:
+      images: datasets/B2/train/image
+      masks: datasets/B2/train/mask
+    val:
+      images: datasets/B2/val/image
+      masks: datasets/B2/val/mask
+    test:
+      images: datasets/B2/test/image
+      masks: datasets/B2/test/mask
+
+  - name: B3
+    mask_suffix: ""
+    train:
+      images: datasets/B3/train/image
+      masks: datasets/B3/train/mask
+    val:
+      images: datasets/B3/val/image
+      masks: datasets/B3/val/mask
+    test:
+      images: datasets/B3/test/image
+      masks: datasets/B3/test/mask
+
+  - name: B4
+    mask_suffix: ""
+    train:
+      images: datasets/B4/train/image
+      masks: datasets/B4/train/mask
+    val:
+      images: datasets/B4/val/image
+      masks: datasets/B4/val/mask
+    test:
+      images: datasets/B4/test/image
+      masks: datasets/B4/test/mask
