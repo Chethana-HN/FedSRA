@@ -16,9 +16,9 @@ This is the official Pytorch implementation of our ICASSP, 2027 submitted paper 
 - `pip install -r requirements.txt`
 
 ## Testing
--Download the test dataset from [GoogleDrive](https://drive.google.com/file/d/1YNtNhTi8rZ2LfgCyANDeIOfuSpJJ4ILm/view?usp=sharing) and place them in the project directory.
+- Download the test dataset from [GoogleDrive](https://drive.google.com/file/d/1YNtNhTi8rZ2LfgCyANDeIOfuSpJJ4ILm/view?usp=sharing) and place them in the project directory.
 
--The folder structure within `datasets` should be organized as follows:
+- The folder structure within `datasets` should be organized as follows:
 ```
 datasets/
 ├── B1/
