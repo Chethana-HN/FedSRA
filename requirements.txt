@@ -1,0 +1,8 @@
+matplotlib==3.11.2
+model==0.6.0
+numpy==2.5.3
+pandas==3.0.6
+Pillow==12.3.0
+PyYAML==6.0.3
+scipy==1.18.1
+torch==2.13.0
