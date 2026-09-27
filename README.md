@@ -7,7 +7,7 @@ This is the test code of our ICASSP, 2027 submitted paper "FEDSRA: FEDERATED SCR
 > 
 ## Dependencies
 - Python 3.10
-- PyTorch 2.5.1
+- PyTorch 2.13
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
 ## Create environment and install packages
